@@ -1,6 +1,7 @@
-// 존나 쪼개셈[=단일 원칙 | 원자성]
 type PrimaryTone = "Black" | "White";
 type PrimaryColor = `${PrimaryTone}`;
+
+//vehicle status card
 
 type SecondaryTone = "Red" | "Green";
 type SecondaryIntensity = "Dark" | "Light" | "Variant";
@@ -13,11 +14,11 @@ type CoolGreyColor = `${CoolTone}${CoolIntensity}`;
 type HexColor = `#${string}`;
 type ColorType<T extends PrimaryColor | SecondaryColor | CoolGreyColor> = { [key in T]: HexColor };
 
-const PrimaryColors: ColorType<PrimaryColor> = {
+export const PrimaryColors: ColorType<PrimaryColor> = {
   Black: "#05141f",
   White: "#ffffff",
 };
-const SecondaryColors: ColorType<SecondaryColor> = {
+export const SecondaryColors: ColorType<SecondaryColor> = {
   GreenDark: "#4C5B35",
   GreenLight: "#DAEDBD",
   GreenVariant: "#589000",
@@ -26,7 +27,7 @@ const SecondaryColors: ColorType<SecondaryColor> = {
   RedVariant: "#EA0029",
 };
 
-const CoolGeryColors: ColorType<CoolGreyColor> = {
+export const CoolGeryColors: ColorType<CoolGreyColor> = {
   CoolGrey5: "#f2f4f6",
   CoolGrey10: "#e6e7e9",
   CoolGrey20: "#cdd0d2",
