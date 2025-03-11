@@ -1,10 +1,7 @@
 import { HEADERFONT } from "../../../types/fonts";
+import { CarNumberProps } from "../types/vehicleStatusCardType";
 
-export type CarNumberProps = {
-  carNumber?: string;
-};
-
-const CarNumber = ({ carNumber = "데이터없음" }: CarNumberProps) => {
+const CarNumber = ({ carNumber }: CarNumberProps) => {
   return <span style={HEADERFONT.H1}>{carNumber}</span>;
 };
 

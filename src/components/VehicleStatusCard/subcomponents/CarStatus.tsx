@@ -1,19 +1,9 @@
-import { CoolGeryColors, SecondaryColors } from "../../../types/colors";
 import { BODYFONT } from "../../../types/fonts";
+import { STATUS_TEXT_COLORS } from "../styles/statusColor";
+import { CarStatusProps } from "../types/vehicleStatusCardType";
 
-export type Status = "완료" | "대기" | "미완료";
-
-export type CarStatusProps = {
-  carStatus: Status;
-};
-
-const CarStatus = ({ carStatus = "미완료" }: CarStatusProps) => {
-  const obj: { [key in Status]: string } = {
-    대기: SecondaryColors.GreenDark,
-    미완료: SecondaryColors.RedVariant,
-    완료: CoolGeryColors.CoolGrey20,
-  };
-  return <span style={{ ...BODYFONT.B2, color: obj[carStatus] }}>{carStatus}</span>;
+const CarStatus = ({ carStatus }: CarStatusProps) => {
+  return <span style={{ ...BODYFONT.B2, color: STATUS_TEXT_COLORS[carStatus] }}>{carStatus}</span>;
 };
 
 export default CarStatus;

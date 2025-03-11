@@ -1,10 +1,7 @@
 import { BODYFONT } from "../../../types/fonts";
+import { CarNameProps } from "../types/vehicleStatusCardType";
 
-export type CarNameProps = {
-  carName?: string;
-};
-
-const CarName = ({ carName = "데이터 없음" }: CarNameProps) => {
+const CarName = ({ carName }: CarNameProps) => {
   return <span style={BODYFONT.B1}>{carName}</span>;
 };
 
